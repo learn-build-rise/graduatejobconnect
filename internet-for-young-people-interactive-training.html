@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A short interactive training on using the internet intentionally for career growth, learning and opportunity access.">
+  <title>Use the Internet for Your Future | Interactive Youth Training</title>
+  <style>
+    :root {
+      --navy: #092d4f;
+      --blue: #0b6da8;
+      --teal: #087a76;
+      --gold: #f4bc3a;
+      --green: #167a55;
+      --ink: #172b3a;
+      --muted: #526474;
+      --paper: #ffffff;
+      --page: #edf4f8;
+      --line: #d9e5ec;
+      --soft-blue: #e8f4fb;
+      --soft-green: #ebf7ef;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--page);
+      color: var(--ink);
+      line-height: 1.62;
+    }
+    .hero {
+      padding: 56px 20px 62px;
+      color: #fff;
+      background: radial-gradient(circle at 90% 12%, rgba(75,201,218,.32), transparent 25%), linear-gradient(135deg, #062947, #0c659b 60%, #087a76);
+    }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    .label {
+      display: inline-block;
+      margin-bottom: 13px;
+      padding: 5px 11px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 { max-width: 720px; margin: 0; font-size: clamp(2.05rem, 5vw, 3.5rem); line-height: 1.1; }
+    .hero p { max-width: 720px; margin: 18px 0 0; font-size: 1.12rem; }
+    main { max-width: 960px; margin: -29px auto 48px; padding: 0 20px; }
+    .card {
+      margin: 20px 0;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+      box-shadow: 0 5px 17px rgba(8,42,70,.06);
+    }
+    h2 { margin: 0 0 12px; color: var(--navy); font-size: 1.5rem; line-height: 1.25; }
+    h3 { margin: 17px 0 8px; color: var(--blue); font-size: 1.12rem; }
+    p { margin: 0 0 13px; }
+    .outcomes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 17px; }
+    .outcome { padding: 16px; border-radius: 9px; background: var(--soft-blue); color: var(--navy); font-weight: 700; }
+    .nav { padding: 24px 30px; background: #f8fbfd; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
+    .nav-links a { padding: 8px 11px; border: 1px solid #c8dce8; border-radius: 5px; background: #fff; color: var(--navy); text-decoration: none; font-size: .92rem; font-weight: 700; }
+    .nav-links a:hover { color: #fff; background: var(--navy); }
+    .conversation { display: grid; gap: 16px; }
+    .speaker { display: flex; gap: 13px; align-items: flex-start; }
+    .speaker.mentor { flex-direction: row-reverse; }
+    .avatar { flex: 0 0 44px; display: grid; width: 44px; height: 44px; place-items: center; border-radius: 50%; color: #fff; font-weight: 700; }
+    .youth .avatar { background: var(--gold); color: #4b3900; }
+    .mentor .avatar { background: var(--teal); }
+    .bubble { max-width: 760px; padding: 16px 18px; border-radius: 12px; background: #f2f7fa; }
+    .mentor .bubble { background: #e7f5f1; border-top-right-radius: 3px; }
+    .youth .bubble { border-top-left-radius: 3px; }
+    .speaker-name { display: block; margin-bottom: 5px; font-size: .84rem; font-weight: 700; color: var(--muted); }
+    .quote { margin: 17px 0; padding: 18px 19px; border-left: 5px solid var(--gold); border-radius: 4px; background: #fff9e8; color: #5a4407; font-size: 1.08rem; font-weight: 700; }
+    .compare { width: 100%; border-collapse: collapse; margin-top: 16px; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; }
+    .compare th, .compare td { padding: 13px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .compare th { background: var(--navy); color: #fff; }
+    .compare tr:last-child td { border-bottom: 0; }
+    .checklist { padding-left: 0; list-style: none; }
+    .checklist li { position: relative; margin: 10px 0; padding-left: 31px; }
+    .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; display: grid; width: 21px; height: 21px; place-items: center; border-radius: 50%; background: var(--green); color: #fff; font-size: .8rem; font-weight: 700; }
+    .details { padding: 0; overflow: hidden; }
+    details { border-bottom: 1px solid var(--line); }
+    details:last-child { border-bottom: 0; }
+    summary { padding: 17px 20px; cursor: pointer; color: var(--navy); font-weight: 700; }
+    .detail-content { padding: 0 20px 18px; }
+    .quiz { border: 2px solid #c5e2d8; background: var(--soft-green); }
+    .question { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #cfe5dc; }
+    .question:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .options { display: grid; gap: 8px; margin-top: 10px; }
+    .options button { width: 100%; padding: 11px 13px; border: 1px solid #b9d2c7; border-radius: 7px; background: #fff; color: var(--ink); text-align: left; font: inherit; cursor: pointer; }
+    .options button:hover { border-color: var(--green); background: #f5fcf8; }
+    .feedback { display: none; margin-top: 9px; padding: 10px 12px; border-radius: 6px; font-weight: 700; }
+    .feedback.correct { background: #dff4e7; color: #0c653f; }
+    .feedback.wrong { background: #fff0ef; color: #a92e25; }
+    .action { text-align: center; color: #fff; background: linear-gradient(135deg, var(--teal), #075880); }
+    .action h2 { color: #fff; }
+    .button { display: inline-block; margin: 10px 5px 0; padding: 12px 17px; border: 0; border-radius: 6px; background: var(--gold); color: #26333d; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .button.secondary { background: #fff; color: var(--navy); }
+    .pledge { display: none; max-width: 700px; margin: 20px auto 0; padding: 15px 18px; border-radius: 8px; background: rgba(255,255,255,.16); text-align: left; }
+    .back { margin-top: 16px; font-size: .9rem; }
+    .back a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    footer { padding: 0 20px 35px; color: var(--muted); text-align: center; font-size: .88rem; }
+    @media (max-width: 650px) {
+      .hero { padding: 43px 20px 54px; }
+      .card { padding: 23px 19px; }
+      .outcomes { grid-template-columns: 1fr; }
+      .nav { padding: 22px 19px; }
+      .compare { font-size: .91rem; }
+      .compare th, .compare td { padding: 10px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="hero">
+    <div class="wrap">
+      <span class="label">Short Interactive Youth Training</span>
+      <h1>Use the Internet for Your Future</h1>
+      <p>A practical conversation for young people who want to turn their phone, data and online presence into tools for learning, work and opportunity.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Welcome</h2>
+      <p>This short training takes about 8–10 minutes. Read the conversation between <strong>Amara</strong>, a young job seeker, and <strong>Mr. Daniel</strong>, a career mentor. Open the practical tips, answer the quick quiz and finish with a simple action plan.</p>
+      <div class="outcomes">
+        <div class="outcome">Use your phone as a career tool</div>
+        <div class="outcome">Build a useful online presence</div>
+        <div class="outcome">Find and act on opportunities early</div>
+      </div>
+    </section>
+
+    <nav class="card nav" aria-label="Training chapters">
+      <h2>Quick navigation</h2>
+      <div class="nav-links">
+        <a href="#conversation">The conversation</a>
+        <a href="#career-phone">Career phone</a>
+        <a href="#internet">Internet plan</a>
+        <a href="#quiz">Quick quiz</a>
+        <a href="#action">Take action</a>
+      </div>
+    </nav>
+
+    <section class="card" id="conversation">
+      <h2>Part 1: The conversation</h2>
+      <div class="conversation">
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara — Young job seeker</span>I use my phone every day. I chat, watch videos and follow social media. But I still feel that opportunities pass me by. What am I doing wrong?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel — Career mentor</span>Using a phone is not the same as using it with purpose. Your phone can entertain you, but it can also help you learn, build skills, meet people, apply for jobs and create evidence of what you can do.</div>
+        </div>
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara</span>So, is entertainment bad?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>No. Entertainment can be healthy rest, creativity and even a career. The question is balance: after your online time, are you more skilled, more connected, more prepared or closer to an opportunity?</div>
+        </div>
+      </div>
+      <div class="quote">“Am I using the internet to advance my future, or am I only entertaining myself?”</div>
+      <p class="back"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Part 2: Opportunities move fast</h2>
+      <div class="conversation">
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara</span>Why do you keep saying I should apply early?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>Jobs, internships, scholarships, grants and training opportunities can attract many applicants within hours. People who are prepared—with a current CV, documents, internet access and alerts turned on—can act before the crowd grows.</div>
+        </div>
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara</span>What should I prepare before a job appears?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>Keep a PDF CV, certificates, a professional email address, an updated LinkedIn profile, a short cover-letter template and reliable access to data. Store them safely in Google Drive or another cloud folder so you can apply from anywhere.</div>
+        </div>
+      </div>
+      <p class="back"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="career-phone">
+      <h2>Part 3: What is a good career phone?</h2>
+      <div class="conversation">
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara</span>Do I need an expensive phone before I can succeed online?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>No. You need a reliable phone, not a glamorous phone. It should help you receive alerts, open documents, submit forms, join interviews and communicate professionally.</div>
+        </div>
+      </div>
+      <table class="compare">
+        <thead><tr><th>Feature</th><th>Practical target</th><th>Why it helps</th></tr></thead>
+        <tbody>
+          <tr><td>Memory</td><td>4GB RAM / 128GB storage minimum; 6GB or 8GB RAM / 128GB better</td><td>Supports LinkedIn, email, WhatsApp, browser, PDFs and documents without constant freezing.</td></tr>
+          <tr><td>Battery</td><td>5,000mAh or more</td><td>Helps you stay available for alerts, applications and interviews.</td></tr>
+          <tr><td>Network</td><td>4G LTE and dual SIM</td><td>Lets you use a primary network and a backup network.</td></tr>
+          <tr><td>Work tools</td><td>Working camera, microphone, Wi‑Fi and charging port</td><td>Needed for interviews, online learning and sending documents.</td></tr>
+        </tbody>
+      </table>
+      <div class="conversation" style="margin-top:16px;">
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>Before buying, test the screen, camera, microphone, speaker, charging port, Wi‑Fi and network signal. Get a receipt and warranty. A strong case and screen protector are also sensible investments.</div>
+        </div>
+      </div>
+      <p class="back"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="internet">
+      <h2>Part 4: Internet is a career asset</h2>
+      <div class="conversation">
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara</span>Data is expensive. How should I use it wisely?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>Treat data like an investment. Reserve it for job alerts, applications, learning, email, professional networking and interviews. Download large files on Wi‑Fi when possible, and reduce automatic video downloads.</div>
+        </div>
+        <div class="speaker youth">
+          <div class="avatar">A</div>
+          <div class="bubble"><span class="speaker-name">Amara</span>What if several young people live in one house?</div>
+        </div>
+        <div class="speaker mentor">
+          <div class="avatar">D</div>
+          <div class="bubble"><span class="speaker-name">Mr. Daniel</span>If three or more people live together, a shared home Wi‑Fi router or outdoor broadband unit can reduce costs. But first confirm the network is strong at the exact address. Agree contributions and protect productive use—interviews, classes and remote work should come before heavy streaming or game downloads.</div>
+        </div>
+      </div>
+      <h3>Smart shared-Wi‑Fi rules</h3>
+      <ul class="checklist">
+        <li>Share the subscription cost fairly and renew it on time.</li>
+        <li>Keep the Wi‑Fi password within the household.</li>
+        <li>Prioritise job interviews, assessments, online classes and remote work.</li>
+        <li>Keep backup mobile data or a hotspot for important moments.</li>
+      </ul>
+      <p class="back"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card details">
+      <h2 style="padding:25px 20px 0;">Part 5: Build a useful online presence</h2>
+      <details>
+        <summary>What should my online presence say about me?</summary>
+        <div class="detail-content">It should show that you are serious, respectful, developing useful skills and ready for opportunities. Start with a professional email address, a complete LinkedIn profile, a clear profile photo and accurate information about your education, projects, work, volunteering and skills.</div>
+      </details>
+      <details>
+        <summary>What can I post if I have little work experience?</summary>
+        <div class="detail-content">Share evidence of progress: a completed course, a useful lesson from a webinar, a school or volunteer project, a spreadsheet you created, a presentation, an event you supported, or a short reflection on an industry topic. Be truthful—do not invent experience.</div>
+      </details>
+      <details>
+        <summary>How can I use social media without wasting all my time?</summary>
+        <div class="detail-content">Follow employers, professional bodies, educators and people working in your target field. Set a daily time limit for entertainment. Make one useful action part of each online session: apply, learn, connect, save a vacancy, update your CV or write a thoughtful comment.</div>
+      </details>
+      <details>
+        <summary>Which apps should I keep ready?</summary>
+        <div class="detail-content">WhatsApp, email, LinkedIn, Google Drive, a PDF reader, Google Docs or Microsoft Word, a browser, Zoom or Teams, a calendar and a cloud-backup app are a strong starting toolkit.</div>
+      </details>
+    </section>
+
+    <section class="card quiz" id="quiz">
+      <h2>Quick knowledge check</h2>
+      <p>Choose an answer. You can try again if you miss one.</p>
+      <div class="question" data-answer="b">
+        <strong>1. What is the best use of a phone for career progress?</strong>
+        <div class="options">
+          <button data-choice="a">Buying the most expensive model available</button>
+          <button data-choice="b">Using a reliable phone to learn, apply, communicate and attend interviews</button>
+          <button data-choice="c">Using it mainly for entertainment and waiting for opportunities to find you</button>
+        </div>
+        <div class="feedback correct">Correct. A career phone is one that helps you take useful action.</div>
+        <div class="feedback wrong">Not quite. Think about reliability and purposeful use, not glamour.</div>
+      </div>
+      <div class="question" data-answer="c">
+        <strong>2. Why should you keep your CV and documents updated before a vacancy appears?</strong>
+        <div class="options">
+          <button data-choice="a">So you can wait until the deadline before applying</button>
+          <button data-choice="b">So you can avoid using job alerts</button>
+          <button data-choice="c">So you can apply early when a suitable opportunity appears</button>
+        </div>
+        <div class="feedback correct">Correct. Preparation makes early, higher-quality applications possible.</div>
+        <div class="feedback wrong">Not quite. The advantage is being ready to act quickly.</div>
+      </div>
+      <div class="question" data-answer="a">
+        <strong>3. What is a sensible rule for shared home Wi‑Fi?</strong>
+        <div class="options">
+          <button data-choice="a">Prioritise interviews, classes and remote work over heavy downloads</button>
+          <button data-choice="b">Give the password to as many people as possible</button>
+          <button data-choice="c">Renew the subscription only when someone complains</button>
+        </div>
+        <div class="feedback correct">Correct. Shared internet works best when productive use is protected.</div>
+        <div class="feedback wrong">Not quite. Shared Wi‑Fi needs clear rules and timely contributions.</div>
+      </div>
+    </section>
+
+    <section class="card action" id="action">
+      <h2>Your 7-day digital progress challenge</h2>
+      <p>Do one practical action each day. Small, consistent steps build readiness.</p>
+      <ul class="checklist" style="max-width:680px;margin:18px auto;text-align:left;">
+        <li>Day 1: Create or improve your professional email address.</li>
+        <li>Day 2: Update your CV and save it as a PDF.</li>
+        <li>Day 3: Create or improve your LinkedIn profile.</li>
+        <li>Day 4: Turn on job alerts for roles you want.</li>
+        <li>Day 5: Organise your certificates and documents in cloud storage.</li>
+        <li>Day 6: Complete one short lesson or career-related course activity.</li>
+        <li>Day 7: Apply for one suitable opportunity or make one useful professional connection.</li>
+      </ul>
+      <button class="button" id="pledgeButton" type="button">I will use the internet with purpose</button>
+      <a class="button secondary" href="#top">Read again</a>
+      <div class="pledge" id="pledgeMessage"><strong>Well done.</strong> Your phone, data, CV and online presence can become part of your career toolkit. Keep building skills, stay prepared and take action early.</div>
+    </section>
+  </main>
+
+  <footer>
+    Prepared as a practical youth learning resource. Share responsibly and use online opportunities through verified channels only.
+  </footer>
+
+  <script>
+    document.querySelectorAll('.question').forEach(function(question) {
+      question.querySelectorAll('button').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var correct = question.dataset.answer;
+          question.querySelectorAll('.feedback').forEach(function(item) { item.style.display = 'none'; });
+          question.querySelector(button.dataset.choice === correct ? '.correct' : '.wrong').style.display = 'block';
+        });
+      });
+    });
+    document.getElementById('pledgeButton').addEventListener('click', function() {
+      document.getElementById('pledgeMessage').style.display = 'block';
+      this.textContent = 'Commitment recorded — keep going';
+      this.disabled = true;
+    });
+  </script>
+</body>
+</html>
