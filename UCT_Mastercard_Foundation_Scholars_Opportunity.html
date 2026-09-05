@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An overview of the University of Cape Town Mastercard Foundation Scholars Program for young African applicants.">
+  <title>UCT Mastercard Foundation Scholars Program | Youth Opportunity</title>
+  <style>
+    :root {
+      --navy: #082b4c;
+      --blue: #0a5e9a;
+      --gold: #f2b632;
+      --green: #147b55;
+      --ink: #1d2939;
+      --muted: #52616b;
+      --paper: #ffffff;
+      --soft: #f4f8fb;
+      --line: #dce5ec;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #edf3f7;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    .hero {
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      padding: 58px 20px 50px;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    .tag {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 11px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.35rem); line-height: 1.12; }
+    .hero p { max-width: 730px; margin: 17px 0 0; font-size: 1.12rem; }
+    main {
+      max-width: 920px;
+      margin: -24px auto 40px;
+      padding: 0 20px;
+    }
+    .notice {
+      margin-bottom: 24px;
+      border-left: 5px solid var(--gold);
+      background: #fff8df;
+      padding: 17px 19px;
+      border-radius: 4px;
+      color: #5b4300;
+    }
+    .card {
+      margin: 20px 0;
+      padding: 30px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(8,43,76,.06);
+    }
+    h2 { margin: 0 0 13px; color: var(--navy); font-size: 1.55rem; line-height: 1.25; }
+    h3 { margin: 23px 0 8px; color: var(--blue); font-size: 1.1rem; }
+    p { margin: 0 0 13px; }
+    ul, ol { margin: 9px 0 0; padding-left: 22px; }
+    li { margin: 8px 0; }
+    .quick-nav { padding: 28px 30px; background: #e9f4fb; border: 1px solid #c8e1ef; }
+    .quick-nav p { color: var(--muted); }
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .nav-grid a {
+      display: block;
+      min-height: 51px;
+      padding: 13px 14px;
+      border: 1px solid #c8dce9;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+    .nav-grid a:hover, .nav-grid a:focus { background: var(--navy); color: #fff; }
+    .highlight {
+      margin-top: 18px;
+      padding: 17px 19px;
+      background: var(--soft);
+      border-radius: 7px;
+      border-left: 4px solid var(--green);
+    }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li {
+      position: relative;
+      min-height: 48px;
+      margin: 13px 0;
+      padding: 10px 10px 10px 61px;
+      background: var(--soft);
+      border-radius: 7px;
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 9px;
+      left: 13px;
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 700;
+    }
+    .back-top { margin-top: 22px; font-size: .9rem; }
+    .back-top a { color: var(--blue); font-weight: 700; text-decoration: none; }
+    .back-top a:hover { text-decoration: underline; }
+    .cta {
+      padding: 34px 30px;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(135deg, var(--green), #0a5e70);
+      border-radius: 10px;
+    }
+    .cta h2 { color: #fff; }
+    .button {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 14px 22px;
+      border-radius: 6px;
+      background: var(--gold);
+      color: #1e3650;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: #ffca49; }
+    footer { padding: 6px 20px 34px; text-align: center; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 600px) {
+      .hero { padding: 44px 20px 42px; }
+      .card, .quick-nav { padding: 23px 20px; }
+      .cta { padding: 28px 20px; }
+      .nav-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="hero">
+    <div class="wrap">
+      <div class="tag">Youth Education Opportunity</div>
+      <h1>UCT Mastercard Foundation Scholars Program</h1>
+      <p>A scholarship and leadership-development opportunity for academically talented young Africans who want to create positive social and economic change across the continent.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="notice">
+      <strong>2027 update:</strong> Undergraduate applications are currently closed. Postgraduate applications remain open, subject to the requirements and deadlines set by the relevant UCT faculty.
+    </div>
+
+    <nav class="card quick-nav" aria-label="Quick navigation">
+      <h2>Quick navigation</h2>
+      <p>Choose a chapter below to jump directly to the information you need.</p>
+      <div class="nav-grid">
+        <a href="#about">1. About the opportunity</a>
+        <a href="#benefits">2. What Scholars receive</a>
+        <a href="#who">3. Who should consider applying?</a>
+        <a href="#status">4. Current application status</a>
+        <a href="#how-to-apply">5. How to apply</a>
+        <a href="#tips">6. Tips for a stronger application</a>
+        <a href="#official-link">Official application link</a>
+      </div>
+    </nav>
+
+    <section class="card" id="about">
+      <h2>Chapter 1: About the opportunity</h2>
+      <p>The Mastercard Foundation Scholars Program at the University of Cape Town (UCT) supports academically talented young Africans to pursue undergraduate and postgraduate studies.</p>
+      <p>It is designed for innovative, purpose-driven applicants who are committed to leading positive social and economic change in Africa. The programme combines university study with personal, professional and leadership development.</p>
+      <div class="highlight">
+        This is not only a funding opportunity. Scholars are expected to take part in community-upliftment projects and engage actively in the wider UCT experience.
+      </div>
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="benefits">
+      <h2>Chapter 2: What Scholars receive</h2>
+      <p>The programme provides a scholarship alongside developmental opportunities that help students succeed at university and prepare for impact after graduation.</p>
+      <ul>
+        <li>Support to pursue an undergraduate or postgraduate qualification at UCT.</li>
+        <li>Mentoring and leadership-development opportunities.</li>
+        <li>Academic and life-skills support.</li>
+        <li>Career-development support.</li>
+        <li>Entrepreneurship training.</li>
+        <li>Opportunities to contribute to community upliftment and social-impact activities.</li>
+      </ul>
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="who">
+      <h2>Chapter 3: Who should consider applying?</h2>
+      <p>This opportunity is aimed at young Africans who combine academic ability with a record—or a strong potential—of leadership, innovation and service to their communities.</p>
+      <p>It may be especially relevant for applicants who have a clear vision for using education to solve practical problems in areas such as employment, entrepreneurship, health, technology, education, climate action, public service or community development.</p>
+      <h3>Before you apply</h3>
+      <p>Check the admission requirements, available programmes and deadlines for your intended UCT faculty. Requirements can vary by programme and study level.</p>
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="status">
+      <h2>Chapter 4: Current application status</h2>
+      <ul>
+        <li><strong>Undergraduate, 2027 intake:</strong> Applications are closed.</li>
+        <li><strong>Postgraduate:</strong> Applications remain open. Applicants should confirm programme-specific requirements and deadlines directly with the relevant UCT faculty.</li>
+        <li><strong>Annual cycle:</strong> UCT opens calls for the Mastercard Foundation Scholars Program annually. If you are not eligible or ready this cycle, monitor the official page for future calls.</li>
+      </ul>
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="how-to-apply">
+      <h2>Chapter 5: How to apply</h2>
+      <p>There are two separate applications. A Mastercard Foundation Scholars Program application is not the same as an academic application to UCT.</p>
+      <ol class="steps">
+        <li><strong>Choose your UCT programme.</strong> Identify the undergraduate or postgraduate programme that fits your academic background and career direction.</li>
+        <li><strong>Apply for academic admission to UCT first.</strong> Submit your application for the degree programme through UCT’s admissions process.</li>
+        <li><strong>Apply to the Mastercard Foundation Scholars Program.</strong> Complete the scholarship application through the official programme process.</li>
+        <li><strong>Track faculty deadlines.</strong> For postgraduate study, confirm the specific requirements and deadline with the faculty offering your programme.</li>
+      </ol>
+      <div class="highlight">
+        For undergraduate applicants, receiving an offer of admission from UCT is necessary before you can be eligible for the Scholars Program.
+      </div>
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="card" id="tips">
+      <h2>Chapter 6: Tips for a stronger application</h2>
+      <ul>
+        <li>Apply early and do not wait until the final deadline.</li>
+        <li>Choose a programme that connects clearly to your skills, experience and long-term goals.</li>
+        <li>Show evidence of academic commitment, leadership, volunteering, entrepreneurship or community service.</li>
+        <li>Explain a realistic problem you want to help solve in your community, country or Africa—and how your studies will help you do it.</li>
+        <li>Prepare your academic records and other required documents carefully, following the exact instructions from UCT and your faculty.</li>
+        <li>Use only official UCT and Mastercard Foundation Scholars Program information when applying. Never pay unofficial agents for a scholarship application.</li>
+      </ul>
+      <p class="back-top"><a href="#top">↑ Back to top</a></p>
+    </section>
+
+    <section class="cta" id="official-link">
+      <h2>Visit the official application page</h2>
+      <p>Read the current guidance, access the UCT academic application route and begin the Mastercard Foundation Scholars Program process from the official UCT page.</p>
+      <a class="button" href="https://uct.ac.za/mastercardfdn/how-apply" target="_blank" rel="noopener noreferrer">Go to the official UCT application page</a>
+      <p class="back-top"><a href="#top" style="color:#fff;">↑ Back to top</a></p>
+    </section>
+  </main>
+
+  <footer>
+    Information summary based on the University of Cape Town Mastercard Foundation Scholars Program application page. Always confirm current eligibility rules, programme requirements and deadlines on the official UCT website.
+  </footer>
+</body>
+</html>
